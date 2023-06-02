@@ -22,6 +22,10 @@ class Client:
         cursor = db.cursor()
         cursor.execute("SELECT * FROM clients")
         clients = cursor.fetchall()
+
+        if not clients:
+            print(">>Nenhum cliente cadastrado!<<")
+
         for client in clients:
             print(f"ID: {client[0]}")
             print(f"Nome: {client[1]}")
@@ -36,5 +40,10 @@ class Client:
         sql = "DELETE FROM clients WHERE id_client = ?"
         values = (id_client,)
         cursor.execute(sql, values)
+        affected_rows = cursor.rowcount
         db.commit()
-        print("Cliente excluído com sucesso!")
+
+        if affected_rows == 0:
+            print(">>Nenhum cliente encontrado com o ID fornecido.<<")
+        else:
+            print("Cliente excluído com sucesso!")
