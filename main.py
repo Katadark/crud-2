@@ -1,5 +1,10 @@
 from models.client import Client
 from models.motorcycle import Motorcycle
+from database import create_tables
+
+# Chama a função para criar as tabelas
+create_tables()
+
 
 def main():
     while True:
@@ -29,7 +34,8 @@ def main():
             brand = input("Marca: ")
             model = input("Modelo: ")
             year = input("Ano: ")
-            motorbike = Motorcycle(brand, model, year)
+            value = input("Valor: R$ ")
+            motorbike = Motorcycle(brand, model, year, value)
             motorbike.register()
         elif option == "5":
             Motorcycle.list()
@@ -41,6 +47,7 @@ def main():
             break
         else:
             print("Opção inválida. Tente novamente.")
+
 
 if __name__ == "__main__":
     main()
