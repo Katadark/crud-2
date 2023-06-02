@@ -23,13 +23,17 @@ class Motorcycle:
         cursor = db.cursor()
         cursor.execute("SELECT * FROM motorcycles")
         motorcycles = cursor.fetchall()
-        for motorcycle in motorcycles:
-            print(f"ID: {motorcycle[0]}")
-            print(f"Marca: {motorcycle[1]}")
-            print(f"Modelo: {motorcycle[2]}")
-            print(f"Ano: {motorcycle[3]}")
-            print(f"Valor: R$ {motorcycle[4]}")
-            print("------------------------")
+
+        if not motorcycles:
+            print(">>Nenhuma motocicleta cadastrada!<<")
+        else:
+            for motorcycle in motorcycles:
+                print(f"ID: {motorcycle[0]}")
+                print(f"Marca: {motorcycle[1]}")
+                print(f"Modelo: {motorcycle[2]}")
+                print(f"Ano: {motorcycle[3]}")
+                print(f"Valor: R$ {motorcycle[4]}")
+                print("------------------------")
 
     @staticmethod
     def delete(id_motorcycle):
@@ -38,5 +42,10 @@ class Motorcycle:
         sql = "DELETE FROM motorcycles WHERE id_motorcycle = ?"
         values = (id_motorcycle,)
         cursor.execute(sql, values)
+        affected_rows = cursor.rowcount
         db.commit()
-        print("Motocicleta excluída com sucesso!")
+
+        if affected_rows == 0:
+            print(">>Nenhuma motocicleta encontrada com o ID fornecido!<<")
+        else:
+            print("Motocicleta excluída com sucesso!")
