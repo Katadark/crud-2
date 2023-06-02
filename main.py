@@ -53,9 +53,9 @@ def main():
                 continue
 
             # Solicita os novos dados do cliente
-            name = input("Nome: ")
-            cpf = input("CPF: ")
-            telephone = input("Telefone: ")
+            name = input("Novo Nome: ")
+            cpf = input("Novo CPF: ")
+            telephone = input("Novo Telefone: ")
 
             # Cria a instância do cliente com os novos dados
             client = Client(id_client, name, cpf, telephone)
