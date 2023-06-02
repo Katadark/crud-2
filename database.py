@@ -35,7 +35,7 @@ def create_tables():
                 brand TEXT NOT NULL,
                 model TEXT NOT NULL,
                 year INTEGER NOT NULL,
-                value DECIMAL(10,2) NOT NULL
+                price DECIMAL(10,2) NOT NULL
             )
             """
         )
