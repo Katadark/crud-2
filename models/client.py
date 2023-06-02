@@ -10,9 +10,9 @@ class Client:
     def register(self):
         db = get_db()
         cursor = db.cursor()
-        sql = "INSERT INTO client (name, cpf, telephone) VALUES (%s, %s, %s)"
-        values = (self.name, self.cpf, self.telephone)
-        cursor.execute(sql, values)
+        cursor.execute("INSERT INTO clients (name, cpf, telephone) "
+                       "VALUES (?, ?, ?)",
+                       (self.name, self.cpf, self.telephone))
         db.commit()
         print("Cliente cadastrado com sucesso!")
 
@@ -20,7 +20,7 @@ class Client:
     def list():
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM client")
+        cursor.execute("SELECT * FROM clients")
         clients = cursor.fetchall()
         for client in clients:
             print(f"ID: {client[0]}")
@@ -33,7 +33,7 @@ class Client:
     def delete(id_client):
         db = get_db()
         cursor = db.cursor()
-        sql = "DELETE FROM client WHERE id_client = %s"
+        sql = "DELETE FROM clients WHERE id_client = ?"
         values = (id_client,)
         cursor.execute(sql, values)
         db.commit()
