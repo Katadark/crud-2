@@ -16,6 +16,7 @@ class Client:
                        (self.name, self.cpf, self.telephone))
         db.commit()
         print("Cliente cadastrado com sucesso!")
+        print("------------------------")
 
     @staticmethod
     def list():
@@ -49,6 +50,7 @@ class Client:
             cursor.execute(sql_update, values)
             db.commit()
             print("Cliente atualizado com sucesso!")
+            print("------------------------")
 
     @staticmethod
     def exists(id_client):
@@ -72,5 +74,6 @@ class Client:
             print(">>Nenhum cliente encontrado com o ID fornecido")
         else:
             print("Cliente excluído com sucesso!")
+            print("------------------------")
 
 

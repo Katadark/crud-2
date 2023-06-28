@@ -17,6 +17,7 @@ class Motorcycle:
                        (self.brand, self.model, self.year, self.price))
         db.commit()
         print("Motocicleta cadastrada com sucesso!")
+        print("------------------------")
 
     @staticmethod
     def list():
@@ -54,6 +55,8 @@ class Motorcycle:
             cursor.execute(sql_update, values)
             db.commit()
             print("Motocicleta atualizada com sucesso!")
+            print("------------------------")
+
 
     @staticmethod
     def exists(id_motorcycle):
@@ -77,3 +80,4 @@ class Motorcycle:
             print(">>Nenhuma motocicleta encontrada com o ID fornecido!<<")
         else:
             print("Motocicleta excluída com sucesso!")
+            print("------------------------")
