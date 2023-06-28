@@ -1,6 +1,6 @@
 from models.client import Client
 from models.motorcycle import Motorcycle
-afrom models.sale import Sale
+from models.sale import Sale
 from database import create_tables
 
 # Chama a função para criar as tabelas
