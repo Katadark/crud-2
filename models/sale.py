@@ -21,8 +21,8 @@ class Sale:
     def list():
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT sales.id_sale, clients.name, "
-                       "motorcycles.brand, motorcycles.model, motorcycles.year, motorcycles.price, sales.sale_date "
+        cursor.execute("SELECT sales.id_sale, sales.sale_date, clients.name, "
+                       "motorcycles.brand, motorcycles.model, motorcycles.year, motorcycles.price "
                        "FROM sales "
                        "INNER JOIN clients ON sales.id_client = clients.id_client "
                        "INNER JOIN motorcycles ON sales.id_motorcycle = motorcycles.id_motorcycle")
@@ -34,20 +34,20 @@ class Sale:
             print("Lista de Vendas:")
             for sale in sales:
                 print(f"ID da Venda: {sale[0]}")
-                print(f"Nome do Cliente: {sale[1]}")
-                print(f"Marca da Motocicleta: {sale[2]}")
-                print(f"Modelo da Motocicleta: {sale[3]}")
-                print(f"Ano da Motocicleta: {sale[4]}")
-                print(f"Valor da Motocicleta: {sale[5]}")
-                print(f"Data da Venda: {sale[6]}")
+                print(f"Data da Venda: {sale[1]}")
+                print(f"Nome do Cliente: {sale[2]}")
+                print(f"Marca da Motocicleta: {sale[3]}")
+                print(f"Modelo da Motocicleta: {sale[4]}")
+                print(f"Ano da Motocicleta: {sale[5]}")
+                print(f"Valor da Motocicleta: {sale[6]}")
                 print("------------------------")
 
     @staticmethod
     def get_sale(id_sale):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT sales.id_sale, clients.name, "
-                       "motorcycles.brand, motorcycles.model, motorcycles.year, motorcycles.price, sales.sale_date "
+        cursor.execute("SELECT sales.id_sale, sales.sale_date, clients.name, "
+                       "motorcycles.brand, motorcycles.model, motorcycles.year, motorcycles.price "
                        "FROM sales "
                        "INNER JOIN clients ON sales.id_client = clients.id_client "
                        "INNER JOIN motorcycles ON sales.id_motorcycle = motorcycles.id_motorcycle "
@@ -60,10 +60,10 @@ class Sale:
         else:
             print("Detalhes da Venda:")
             print(f"ID da Venda: {sale[0]}")
-            print(f"Nome do Cliente: {sale[1]}")
-            print(f"Marca da Motocicleta: {sale[2]}")
-            print(f"Modelo da Motocicleta: {sale[3]}")
-            print(f"Ano da Motocicleta: {sale[4]}")
-            print(f"Valor da Motocicleta: {sale[5]}")
-            print(f"Data da Venda: {sale[6]}")
+            print(f"Data da Venda: {sale[1]}")
+            print(f"Nome do Cliente: {sale[2]}")
+            print(f"Marca da Motocicleta: {sale[3]}")
+            print(f"Modelo da Motocicleta: {sale[4]}")
+            print(f"Ano da Motocicleta: {sale[5]}")
+            print(f"Valor da Motocicleta: {sale[6]}")
             print("------------------------")
