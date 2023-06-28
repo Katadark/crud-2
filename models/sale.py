@@ -21,7 +21,8 @@ class Sale:
     def list():
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT sales.id_sale, sales.sale_date, clients.name, "
+        cursor.execute("SELECT sales.id_sale, sales.sale_date, "
+                       "clients.name, clients.cpf, clients.telephone,"
                        "motorcycles.brand, motorcycles.model, motorcycles.year, motorcycles.price "
                        "FROM sales "
                        "INNER JOIN clients ON sales.id_client = clients.id_client "
@@ -36,17 +37,20 @@ class Sale:
                 print(f"ID da Venda: {sale[0]}")
                 print(f"Data da Venda: {sale[1]}")
                 print(f"Nome do Cliente: {sale[2]}")
-                print(f"Marca da Motocicleta: {sale[3]}")
-                print(f"Modelo da Motocicleta: {sale[4]}")
-                print(f"Ano da Motocicleta: {sale[5]}")
-                print(f"Valor da Motocicleta: {sale[6]}")
+                print(f"CPF do Cliente: {sale[3]}")
+                print(f"Telefone do Cliente: {sale[4]}")
+                print(f"Marca da Motocicleta: {sale[5]}")
+                print(f"Modelo da Motocicleta: {sale[6]}")
+                print(f"Ano da Motocicleta: {sale[7]}")
+                print(f"Valor da Motocicleta: R${sale[8]}")
                 print("------------------------")
 
     @staticmethod
     def get_sale(id_sale):
         db = get_db()
         cursor = db.cursor()
-        cursor.execute("SELECT sales.id_sale, sales.sale_date, clients.name, "
+        cursor.execute("SELECT sales.id_sale, sales.sale_date, "
+                       "clients.name, clients.cpf, clients.telephone,"
                        "motorcycles.brand, motorcycles.model, motorcycles.year, motorcycles.price "
                        "FROM sales "
                        "INNER JOIN clients ON sales.id_client = clients.id_client "
@@ -62,8 +66,10 @@ class Sale:
             print(f"ID da Venda: {sale[0]}")
             print(f"Data da Venda: {sale[1]}")
             print(f"Nome do Cliente: {sale[2]}")
-            print(f"Marca da Motocicleta: {sale[3]}")
-            print(f"Modelo da Motocicleta: {sale[4]}")
-            print(f"Ano da Motocicleta: {sale[5]}")
-            print(f"Valor da Motocicleta: {sale[6]}")
+            print(f"CPF do Cliente: {sale[3]}")
+            print(f"Telefone do Cliente: {sale[4]}")
+            print(f"Marca da Motocicleta: {sale[5]}")
+            print(f"Modelo da Motocicleta: {sale[6]}")
+            print(f"Ano da Motocicleta: {sale[7]}")
+            print(f"Valor da Motocicleta: R${sale[8]}")
             print("------------------------")
