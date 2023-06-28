@@ -40,6 +40,25 @@ def create_tables():
             """
         )
 
+        # Verifica se a tabela 'sales' já existe
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='sales'")
+        sales_table_exists = cursor.fetchone()
+
+        if not sales_table_exists:
+            # Criação da tabela 'sales'
+            cursor.execute(
+                """
+                CREATE TABLE sales (
+                    id_sale INTEGER PRIMARY KEY AUTOINCREMENT,
+                    id_client INTEGER NOT NULL,
+                    id_motorcycle INTEGER NOT NULL,
+                    sale_date TEXT NOT NULL,
+                    FOREIGN KEY (id_client) REFERENCES clients (id_client),
+                    FOREIGN KEY (id_motorcycle) REFERENCES motorcycles (id_motorcycle)
+                )
+                """
+            )
+
     conn.commit()
     conn.close()
 
