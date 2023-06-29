@@ -17,45 +17,7 @@ Como mostra a imagem abaixo:
 
 Após isso, no terminal vai aparecer as opções para o usuário ir respondendo de acordo com sua necessidade.
 
-Abaixo segue imagens do que pode ser feito na aplicação:
+Abaixo segue apresentação do funcionamento do projeto, só clicar que será direcionado apra o vídeo:
 
-- Menu Principal:
-![Menu](assets/Menu_principal.png)
+[![Video](assets/Menu_principal.png)](https://youtu.be/ISFfkI4ocaY)
 
-
-- Cadastro de Cliente:
-![Register_Client](assets/Cadastro_de_Cliente.png)
-
-  
-- Listar Cliente:
-![List_Client](assets/Listagem_do_Cliente.png)
-
-
-- Excluir Cliente:
-![Delete_Client](assets/Cliente_Deletado.png)
-
-
-- Cadastro de Motocicleta:
-![Register_Motorcycle](assets/Cadastro_da_Motocicleta.png)
-
-
-- Listar Motocicleta:
-![List_Motorcycle](assets/Listagem_da_Motocicleta.png)
-
-
-- Excluir Motocicleta:
-![Delete_Motorcycle](assets/Motocicleta_deletada.png)
-
-
-- Editar Cliente:
-![Closing_Program](assets/Cliente_Editado.png)
-
-
-- Editar Motocicleta:
-![Closing_Program](assets/Motocicleta_Editada.png)
-
-
-- Encerrar Programa:
-![Closing_Program](assets/Encerrando_programa.png)
-
-  
